@@ -1,11 +1,11 @@
 /* src/main/resources/styles/styles.css */
 
 .root {
-    -fx-background-color: #000;
+    -fx-background-color: linear-gradient(#e0eafc, #cfdef3);
 }
 
 * {
-    -fx-text-fill: #F8F8FF;
+    -fx-text-fill: #333333;
 }
 
 .label {
@@ -20,8 +20,9 @@
     -fx-pref-width: 17.5em;
     -fx-alignment: center-right;
     -fx-font-size: 2em;
+    -fx-background-radius: 0.1em;
     -fx-padding: 0.15em;
-    -fx-background-color: #060c0f;
+    -fx-background-color: linear-gradient(#f9f9f9, #e6e6e6);
 }
 
 .output-label {
@@ -30,7 +31,7 @@
     -fx-font-size: 5em;
     -fx-background-radius: 0.15em;
     -fx-padding: 0.15em 0.15em 0 0;
-    -fx-background-color: #060c0f;
+    -fx-background-color: linear-gradient(#f9f9f9, #e6e6e6);
 }
 
 .button {
@@ -38,23 +39,27 @@
     -fx-min-height: 2.45em;
     -fx-font-size: 2em;
     -fx-background-radius: 0.3em;
-    -fx-border-color: #000;
+    -fx-border: none;
+    -fx-background-color: linear-gradient(#4a90e2, #357ABD);
+    -fx-text-fill: #ffffff;
 }
 
 .button:hover {
+    -fx-background-color: linear-gradient(#357ABD, #4a90e2);
     -fx-opacity: 0.9;
 }
 
 .button:pressed {
-    -fx-opacity: 0.5;
+    -fx-background-color: #2a5b9e;
+    -fx-opacity: 0.8;
 }
 
 .button-row-0-primary-color {
-    -fx-background-color: #14213D;
+    -fx-background-color: linear-gradient(#a1c4fd, #c2e9fb);
 }
 
 .button-row-0-secondary-color {
-    -fx-background-color: #FCA311;
+    -fx-background-color: linear-gradient(#a1c4fd, #c2e9fb);
 }
 
 .button-row-1-primary-color {
@@ -62,7 +67,7 @@
 }
 
 .button-row-1-secondary-color {
-    -fx-background-color: #FCA311;
+    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
 }
 
 .button-row-2-primary-color {
@@ -70,7 +75,7 @@
 }
 
 .button-row-2-secondary-color {
-    -fx-background-color: #FCA311;
+    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
 }
 
 .button-row-3-primary-color {
@@ -78,7 +83,7 @@
 }
 
 .button-row-3-secondary-color {
-    -fx-background-color: #FCA311;
+    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
 }
 
 .button-row-4-primary-color {
@@ -86,7 +91,7 @@
 }
 
 .button-row-4-secondary-color {
-    -fx-background-color: #FCA311;
+    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
 }
 
 .button-row-5-primary-color {
@@ -94,5 +99,5 @@
 }
 
 .button-row-5-secondary-color {
-    -fx-background-color: #FCA311;
+    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
 }
