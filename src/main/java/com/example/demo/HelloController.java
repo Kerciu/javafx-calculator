@@ -5,10 +5,8 @@ import javafx.scene.control.Label;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    public Label inputLabel;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    public Label outputLabel;
 }
