@@ -11,3 +11,20 @@
 .button {
     -fx-font-size: 14px;
 }
+
+.input-label {
+    -fx-pref-width: 17.5em;
+    -fx-alignment: center-right;
+    -fx-font-size: 2em;
+    -fx-padding: 0.15em;
+    -fx-background-color: pink;
+}
+
+.output-label {
+    -fx-pref-width: 7.85em;
+    -fx-alignment: center-right
+    -fx-font-size: 5em;
+    -fx-background-radius: 0.15em;
+    -fx-padding: 0.15em 0.15em 0 0;
+    -fx-background-color: yellow;
+}
