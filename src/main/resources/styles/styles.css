@@ -1,11 +1,12 @@
 /* src/main/resources/styles/styles.css */
 
 .root {
-    -fx-background-color: linear-gradient(#e0eafc, #cfdef3);
+    -fx-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);
 }
 
 * {
-    -fx-text-fill: #333333;
+    -fx-text-fill: #4a4a4a;
+    -fx-font-family: 'Arial', sans-serif;
 }
 
 .label {
@@ -16,88 +17,56 @@
     -fx-font-size: 14px;
 }
 
+.label {
+    -fx-font-size: 16px;
+}
+
 .input-label {
     -fx-pref-width: 17.5em;
     -fx-alignment: center-right;
     -fx-font-size: 2em;
-    -fx-background-radius: 0.1em;
+    -fx-background-radius: 0.5em;
     -fx-padding: 0.15em;
-    -fx-background-color: linear-gradient(#f9f9f9, #e6e6e6);
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
 .output-label {
-    -fx-pref-width: 7em;
+    -fx-pref-width: 8.75em;
     -fx-alignment: center-right;
-    -fx-font-size: 5em;
-    -fx-background-radius: 0.15em;
+    -fx-font-size: 4em;
+    -fx-background-radius: 0.5em;
     -fx-padding: 0.15em 0.15em 0 0;
-    -fx-background-color: linear-gradient(#f9f9f9, #e6e6e6);
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
 .button {
-    -fx-min-width: 4.4em;
-    -fx-min-height: 2.45em;
-    -fx-font-size: 2em;
-    -fx-background-radius: 0.3em;
+    -fx-min-width: 4.5em;
+    -fx-min-height: 3em;
+    -fx-font-size: 1.8em;
+    -fx-background-radius: 1em;
     -fx-border: none;
-    -fx-background-color: linear-gradient(#4a90e2, #357ABD);
-    -fx-text-fill: #ffffff;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
+    -fx-text-fill: #4a90e2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
+    -fx-alignment: center;
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(#357ABD, #4a90e2);
+    -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
     -fx-opacity: 0.9;
 }
 
 .button:pressed {
-    -fx-background-color: #2a5b9e;
+    -fx-background-color: #cfd8e6;
     -fx-opacity: 0.8;
 }
 
-.button-row-0-primary-color {
-    -fx-background-color: linear-gradient(#a1c4fd, #c2e9fb);
+.button-primary-color {
+    -fx-background-color: #ffffff;
 }
 
-.button-row-0-secondary-color {
-    -fx-background-color: linear-gradient(#a1c4fd, #c2e9fb);
-}
-
-.button-row-1-primary-color {
-    -fx-background-color: #14213D;
-}
-
-.button-row-1-secondary-color {
-    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
-}
-
-.button-row-2-primary-color {
-    -fx-background-color: #14213D;
-}
-
-.button-row-2-secondary-color {
-    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
-}
-
-.button-row-3-primary-color {
-    -fx-background-color: #14213D;
-}
-
-.button-row-3-secondary-color {
-    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
-}
-
-.button-row-4-primary-color {
-    -fx-background-color: #14213D;
-}
-
-.button-row-4-secondary-color {
-    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
-}
-
-.button-row-5-primary-color {
-    -fx-background-color: #14213D;
-}
-
-.button-row-5-secondary-color {
-    -fx-background-color: linear-gradient(#ED3EF7, #BF2EF0);
+.button-secondary-color {
+    -fx-background-color: #e0eafc;
 }
