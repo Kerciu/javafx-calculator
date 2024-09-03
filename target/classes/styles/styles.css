@@ -5,7 +5,6 @@
 }
 
 * {
-    -fx-text-fill: #4a4a4a;
     -fx-font-family: 'Arial', sans-serif;
 }
 
@@ -38,6 +37,7 @@
     -fx-background-radius: 0.5em;
     -fx-padding: 0.15em 0.15em 0 0;
     -fx-background-color: #ffffff;
+    -fx-text-fill: #0a7bff;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
@@ -51,6 +51,10 @@
     -fx-text-fill: #4a90e2;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
     -fx-alignment: center;
+}
+
+.calculation-btn {
+    -fx-text-fill: #4a90e2 !important;
 }
 
 .button:hover {
