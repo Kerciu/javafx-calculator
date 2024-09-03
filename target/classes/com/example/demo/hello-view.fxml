@@ -6,44 +6,68 @@
 <?import javafx.scene.layout.GridPane?>
 <?import java.net.URL?>
 
-<AnchorPane prefWidth="435" prefHeight="560" xmlns:fx="http://javafx.com/fxml"
+<AnchorPane prefWidth="430" prefHeight="500" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.demo.HelloController">
     <stylesheets>
         <URL value="@../../../styles/styles.css"/>
     </stylesheets>
 
     <Label fx:id="inputLabel" styleClass="input-label"
-           AnchorPane.topAnchor="40" AnchorPane.leftAnchor="7"/>
+           AnchorPane.topAnchor="20" AnchorPane.leftAnchor="7"/>
 
     <Label fx:id="outputLabel" text="0" styleClass="output-label"
-           AnchorPane.topAnchor="90" AnchorPane.leftAnchor="7"/>
+           AnchorPane.topAnchor="80" AnchorPane.leftAnchor="7"/>
 
     <GridPane AnchorPane.topAnchor="200" AnchorPane.leftAnchor="5">
 
-        <Button text="CE" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <Button text="C" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-        <Button text="&#x232B;" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-        <Button text="\%" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
-        <Button text="&#x215F;x" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <Button text="x²" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-        <Button text="&#x221A;x" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
-        <Button text="&#x00F7;" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
-        <Button text="7" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <Button text="8" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-        <Button text="9" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
-        <Button text="&#x00D7;" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
-        <Button text="4" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <Button text="5" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-        <Button text="6" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
-        <Button text="-" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
-        <Button text="1" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <Button text="2" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-        <Button text="3" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
-        <Button text="+" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
-        <Button text="00" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-        <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
-        <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="2"/>
-        <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="3"/>
+        <Button text="CE" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                styleClass="button-row-0-primary-color"/>
+        <Button text="C" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                styleClass="button-row-0-primary-color"/>
+        <Button text="&#x232B;" GridPane.rowIndex="0" GridPane.columnIndex="2"
+                styleClass="button-row-0-primary-color"/>
+        <Button text="\%" GridPane.rowIndex="0" GridPane.columnIndex="3"
+                styleClass="button-row-0-secondary-color"/>
+        <Button text="&#x215F;x" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                styleClass="button-row-1-primary-color"/>
+        <Button text="x²" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                styleClass="button-row-1-primary-color"/>
+        <Button text="&#x221A;x" GridPane.rowIndex="1" GridPane.columnIndex="2"
+                styleClass="button-row-1-primary-color"/>
+        <Button text="&#x00F7;" GridPane.rowIndex="1" GridPane.columnIndex="3"
+                styleClass="button-row-1-secondary-color"/>
+        <Button text="7" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                styleClass="button-row-2-primary-color"/>
+        <Button text="8" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                styleClass="button-row-2-primary-color"/>
+        <Button text="9" GridPane.rowIndex="2" GridPane.columnIndex="2"
+                styleClass="button-row-2-primary-color"/>
+        <Button text="&#x00D7;" GridPane.rowIndex="2" GridPane.columnIndex="3"
+                styleClass="button-row-2-secondary-color"/>
+        <Button text="4" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                styleClass="button-row-3-primary-color"/>
+        <Button text="5" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                styleClass="button-row-3-primary-color"/>
+        <Button text="6" GridPane.rowIndex="3" GridPane.columnIndex="2"
+                styleClass="button-row-3-primary-color"/>
+        <Button text="-" GridPane.rowIndex="3" GridPane.columnIndex="3"
+                styleClass="button-row-3-secondary-color"/>
+        <Button text="1" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                styleClass="button-row-4-primary-color"/>
+        <Button text="2" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                styleClass="button-row-4-primary-color"/>
+        <Button text="3" GridPane.rowIndex="4" GridPane.columnIndex="2"
+                styleClass="button-row-4-primary-color"/>
+        <Button text="+" GridPane.rowIndex="4" GridPane.columnIndex="3"
+                styleClass="button-row-4-secondary-color"/>
+        <Button text="00" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                styleClass="button-row-5-primary-color"/>
+        <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                styleClass="button-row-5-primary-color"/>
+        <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="2"
+                styleClass="button-row-5-primary-color"/>
+        <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="3"
+                styleClass="button-row-5-secondary-color"/>
 
     </GridPane>
 

@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 435, 560);
+        Scene scene = new Scene(fxmlLoader.load(), 470, 590);
 
         URL cssUrl = getClass().getResource("/styles/styles.css");
         System.out.println("CSS URL: " + cssUrl);
