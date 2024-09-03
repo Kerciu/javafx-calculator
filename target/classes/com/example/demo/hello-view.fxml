@@ -23,7 +23,7 @@
         <Button text="CE" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
         <Button text="C" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
         <Button text="&#x232B;" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-        <Button text="." GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        <Button text="\%" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
         <Button text="&#x215F;x" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
         <Button text="x²" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
         <Button text="&#x221A;x" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
