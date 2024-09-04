@@ -12,11 +12,20 @@ public class Controller {
     @FXML
     public Label outputLabel;
 
+    private boolean binaryOperatorPressed, unaryOperatorPressed, equalsOperatorPressed;
+    private boolean firstNumberStored, secondNumberStored;
+
+    private double firstNumber, secondNumber;
+    private String binaryOperator;
+
     public void handleNumberSelected(ActionEvent evt)
     {
         Button button = (Button) evt.getSource();
 
+        boolean doubleZeroSelected = false;
         String digitSelected = button.getText();
+        if (digitSelected.length() == 2) doubleZeroSelected = true;
+
         String outputText = outputLabel.getText();
 
         if (hasZeroReplaceable(outputText)) {
@@ -29,6 +38,8 @@ public class Controller {
 
     private boolean hasZeroReplaceable(String text)
     {
-        return false;
+        boolean formula = (firstNumberStored && binaryOperatorPressed && secondNumberStored);
+        boolean textIsZero = Double.parseDouble(text) == 0;
+        return formula || equalsOperatorPressed || unaryOperatorPressed || textIsZero;
     }
 }
