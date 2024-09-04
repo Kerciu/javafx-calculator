@@ -13,4 +13,6 @@ module com.example.demo {
 
     opens com.calculator.main to javafx.fxml;
     exports com.calculator.main;
+    exports com.calculator.controller;
+    opens com.calculator.controller to javafx.fxml;
 }

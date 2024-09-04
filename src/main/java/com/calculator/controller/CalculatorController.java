@@ -1,0 +1,108 @@
+package com.calculator.controller;
+
+import com.calculator.state.CalculatorState;
+import com.calculator.parsers.UnaryOperationParser;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+
+public class CalculatorController {
+
+    private CalculatorState calculatorState = new CalculatorState();
+
+    @FXML
+    public Label inputLabel;
+
+    @FXML
+    public Label outputLabel;
+
+    @FXML
+    public void handleNumberSelected(ActionEvent evt)
+    {
+        Button button = (Button) evt.getSource();
+        String digitSelected = button.getText();
+        digitSelected = parseDoubleZeroIfClicked(digitSelected);
+
+        if (shouldReplaceOutput()) {
+            outputLabel.setText(digitSelected);
+        } else {
+            outputLabel.setText(outputLabel.getText() + digitSelected);
+        }
+
+        if (calculatorState.isBinaryOperatorPressed()) {
+            calculatorState.setSecondNumber(Double.parseDouble(outputLabel.getText()));
+        }
+    }
+
+    @FXML
+    public void handleUnaryOperator(ActionEvent evt)
+    {
+        Button button = (Button) evt.getSource();
+        String unaryOperator = button.getText();
+
+        double number = Double.parseDouble(outputLabel.getText());
+
+        String operation = UnaryOperationParser.getOperationText(unaryOperator, number);
+        inputLabel.setText(operation);
+
+        double result = UnaryOperationParser.performOperation(unaryOperator, number);
+        outputLabel.setText(Double.toString(result));
+
+        calculatorState.setUnaryOperatorPressed(true);
+    }
+
+    @FXML
+    public void handleBinaryOperator(ActionEvent evt)
+    {
+        Button button = (Button) evt.getSource();
+        String binaryOperator = button.getText();
+
+        if (!calculatorState.isBinaryOperatorPressed()) {
+            calculatorState.setFirstNumber(Double.parseDouble(outputLabel.getText()));
+        }
+
+        calculatorState.setBinaryOperator(binaryOperator);
+        inputLabel.setText(calculatorState.getFirstNumber() + " " + binaryOperator);
+    }
+
+    @FXML
+    public void handleDotButton()
+    {
+        if (!outputLabel.getText().contains(".")) {
+            outputLabel.setText(outputLabel.getText() + ".");
+        }
+    }
+
+    @FXML
+    public void handleClearEntryButton()
+    {
+
+    }
+
+    @FXML
+    public void handleClearButton()
+    {
+
+    }
+
+    @FXML
+    public void handleDeleteButton()
+    {
+
+    }
+
+    private boolean shouldReplaceOutput()
+    {
+        boolean textEqualsZero = outputLabel.getText().equalsIgnoreCase("0");
+        boolean textEqualsDoubleZero = outputLabel.getText().equalsIgnoreCase("00");
+        boolean unaryPressed = calculatorState.isUnaryOperatorPressed();
+
+        return textEqualsZero || textEqualsDoubleZero || unaryPressed;
+    }
+
+    private String parseDoubleZeroIfClicked(String digits)
+    {
+        return digits.equalsIgnoreCase("00") && outputLabel.getText().equalsIgnoreCase("0") ? "0" : digits;
+    }
+}

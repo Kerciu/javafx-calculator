@@ -1,4 +1,4 @@
-package com.calculator;
+package com.calculator.state;
 
 public class CalculatorState {
     private double firstNumber;
@@ -76,6 +76,14 @@ public class CalculatorState {
 
     public void setSecondNumberStored(boolean secondNumberStored) {
         this.secondNumberStored = secondNumberStored;
+    }
+
+    public void resetState() {
+        firstNumberStored = false;
+        secondNumberStored = false;
+        binaryOperatorPressed = false;
+        unaryOperatorPressed = false;
+        equalsOperatorPressed = false;
     }
 
 }

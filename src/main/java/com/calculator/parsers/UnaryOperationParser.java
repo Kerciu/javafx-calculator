@@ -1,4 +1,4 @@
-package com.calculator.performer;
+package com.calculator.parsers;
 
 import com.calculator.constants.OperatorConstants;
 
@@ -7,18 +7,11 @@ public class UnaryOperationParser {
     {
         return switch (OperatorConstants.parseUnaryOperator(operator))
         {
-            case PERCENT -> {
-                number /= 100;
-                yield Double.toString(number);
-            }
-
+            case PERCENT -> Double.toString(number / 100);
             case RECIPROCAL -> "⅟ " + number;
-
             case SQRT -> "√" + number;
-
             case SQUARE -> number + "²";
-
-            default -> throw new RuntimeException("No such operator exists");
+            default -> throw new UnsupportedOperationException("No such operator exists");
         };
     }
 
@@ -26,18 +19,11 @@ public class UnaryOperationParser {
     {
         return switch (OperatorConstants.parseUnaryOperator(operator))
         {
-            case PERCENT -> {
-                number /= 100;
-                yield number;
-            }
-
+            case PERCENT -> number / 100;
             case RECIPROCAL -> 1 / number;
-
             case SQRT -> Math.sqrt(number);
-
             case SQUARE -> number * number;
-
-            default -> throw new RuntimeException("No such operator exists");
+            default -> throw new UnsupportedOperationException("No such operator exists");
         };
     }
 }
