@@ -44,14 +44,18 @@ public class Controller {
     }
 
     @FXML
-    public void handleUnaryOperator()
+    public void handleUnaryOperator(ActionEvent evt)
     {
+        Button button = (Button) evt.getSource();
+        String unaryOperator = button.getText();
 
+        firstNumber = Double.parseDouble(outputLabel.getText());
+        firstNumberStored = true;
     }
 
-    @FXML void handleBinaryOperator()
+    @FXML void handleBinaryOperator(ActionEvent evt)
     {
-        
+
     }
 
     private boolean hasZeroReplaceable(String text)
