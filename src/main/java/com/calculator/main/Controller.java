@@ -18,6 +18,7 @@ public class Controller {
     private double firstNumber, secondNumber;
     private String binaryOperator;
 
+    @FXML
     public void handleNumberSelected(ActionEvent evt)
     {
         Button button = (Button) evt.getSource();
@@ -25,10 +26,7 @@ public class Controller {
         String digitSelected = button.getText();
         String outputText = outputLabel.getText();
 
-        // allow only one zero upon clicking double zero
-        if (digitSelected.length() == 2 && outputText.equalsIgnoreCase("0")) {
-            digitSelected = digitSelected.replaceAll("00", "0");
-        }
+        parseDoubleZeroAtBeginning(digitSelected);
 
 
         if (hasZeroReplaceable(outputText)) {
@@ -45,6 +43,17 @@ public class Controller {
         }
     }
 
+    @FXML
+    public void handleUnaryOperator()
+    {
+
+    }
+
+    @FXML void handleBinaryOperator()
+    {
+        
+    }
+
     private boolean hasZeroReplaceable(String text)
     {
         boolean formula = (firstNumberStored && binaryOperatorPressed && secondNumberStored);
@@ -55,5 +64,12 @@ public class Controller {
     private boolean shouldStoreSecondNumber()
     {
         return !secondNumberStored && firstNumberStored && binaryOperatorPressed;
+    }
+
+    private void parseDoubleZeroAtBeginning(String digitSelected)
+    {
+        if (digitSelected.length() == 2 && outputLabel.getText().equalsIgnoreCase("0")) {
+            digitSelected = digitSelected.replaceAll("00", "0");
+        }
     }
 }
