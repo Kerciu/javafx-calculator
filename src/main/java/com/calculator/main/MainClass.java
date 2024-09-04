@@ -12,7 +12,7 @@ import java.net.URL;
 public class MainClass extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainClass.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainClass.class.getResource("calculator-main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 470, 640);
 
         URL cssUrl = getClass().getResource("/styles/styles.css");
