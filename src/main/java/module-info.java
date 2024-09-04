@@ -10,6 +10,7 @@ module com.example.demo {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires junit;
 
     opens com.calculator.main to javafx.fxml;
     exports com.calculator.main;
