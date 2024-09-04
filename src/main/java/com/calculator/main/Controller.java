@@ -1,5 +1,6 @@
 package com.calculator.main;
 
+import com.calculator.performer.UnaryOperationParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -50,6 +51,17 @@ public class Controller {
         String unaryOperator = button.getText();
 
         firstNumber = Double.parseDouble(outputLabel.getText());
+        firstNumberStored = true;
+
+        String operation = UnaryOperationParser.getOperationText(unaryOperator, firstNumber);
+        inputLabel.setText(operation);
+
+        firstNumber = UnaryOperationParser.performOperation(unaryOperator, firstNumber);
+        outputLabel.setText(Double.toString(firstNumber));
+
+        unaryOperatorPressed = true;
+        binaryOperatorPressed = false;
+        equalsOperatorPressed = false;
         firstNumberStored = true;
     }
 
