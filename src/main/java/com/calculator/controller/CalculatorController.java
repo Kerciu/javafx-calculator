@@ -77,19 +77,29 @@ public class CalculatorController {
     @FXML
     public void handleClearEntryButton()
     {
-
+        outputLabel.setText("0");
     }
 
     @FXML
     public void handleClearButton()
     {
-
+        outputLabel.setText("0");
+        inputLabel.setText("");
+        calculatorState.resetState();
     }
 
     @FXML
     public void handleDeleteButton()
     {
+        if (!outputLabel.getText().equalsIgnoreCase("0"))
+        {
+            outputLabel.setText(outputLabel.getText().substring(0, outputLabel.getText().length() - 1));
+        }
 
+        if (outputLabel.getText().length() <= 0)
+        {
+            outputLabel.setText("0");
+        }
     }
 
     private boolean shouldReplaceOutput()
