@@ -1,10 +1,8 @@
-package com.example.frontend;
+package com.calculator.icon;
 
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-import java.io.File;
 
 public class StageIconLoader {
     public static void loadIcon(Application source, Stage stage)

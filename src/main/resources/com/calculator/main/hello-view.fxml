@@ -7,7 +7,7 @@
 <?import java.net.URL?>
 
 <AnchorPane prefWidth="460" prefHeight="640" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo.HelloController">
+            fx:controller="com.calculator.main.Controller">
     <stylesheets>
         <URL value="@../../../styles/styles.css"/>
     </stylesheets>
@@ -37,33 +37,33 @@
                 styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x00F7;" GridPane.rowIndex="1" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
-        <Button text="7" GridPane.rowIndex="2" GridPane.columnIndex="0"
+        <Button text="7" onAction="#handleNumberSelected" GridPane.rowIndex="2" GridPane.columnIndex="0"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="8" GridPane.rowIndex="2" GridPane.columnIndex="1"
+        <Button text="8" onAction="#handleNumberSelected" GridPane.rowIndex="2" GridPane.columnIndex="1"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="9" GridPane.rowIndex="2" GridPane.columnIndex="2"
+        <Button text="9" onAction="#handleNumberSelected" GridPane.rowIndex="2" GridPane.columnIndex="2"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x00D7;" GridPane.rowIndex="2" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
-        <Button text="4" GridPane.rowIndex="3" GridPane.columnIndex="0"
+        <Button text="4" onAction="#handleNumberSelected" GridPane.rowIndex="3" GridPane.columnIndex="0"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="5" GridPane.rowIndex="3" GridPane.columnIndex="1"
+        <Button text="5" onAction="#handleNumberSelected" GridPane.rowIndex="3" GridPane.columnIndex="1"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="6" GridPane.rowIndex="3" GridPane.columnIndex="2"
+        <Button text="6" onAction="#handleNumberSelected" GridPane.rowIndex="3" GridPane.columnIndex="2"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="-" GridPane.rowIndex="3" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
-        <Button text="1" GridPane.rowIndex="4" GridPane.columnIndex="0"
+        <Button text="1" onAction="#handleNumberSelected" GridPane.rowIndex="4" GridPane.columnIndex="0"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="2" GridPane.rowIndex="4" GridPane.columnIndex="1"
+        <Button text="2" onAction="#handleNumberSelected" GridPane.rowIndex="4" GridPane.columnIndex="1"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="3" GridPane.rowIndex="4" GridPane.columnIndex="2"
+        <Button text="3" onAction="#handleNumberSelected" GridPane.rowIndex="4" GridPane.columnIndex="2"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="+" GridPane.rowIndex="4" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
-        <Button text="00" GridPane.rowIndex="5" GridPane.columnIndex="0"
+        <Button text="00" onAction="#handleNumberSelected" GridPane.rowIndex="5" GridPane.columnIndex="0"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="0" GridPane.rowIndex="5" GridPane.columnIndex="1"
+        <Button text="0" onAction="#handleNumberSelected" GridPane.rowIndex="5" GridPane.columnIndex="1"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="2"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
