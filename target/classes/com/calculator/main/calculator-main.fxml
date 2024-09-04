@@ -67,7 +67,7 @@
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="." onAction="#handleDotButton" GridPane.rowIndex="5" GridPane.columnIndex="2"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="3"
+        <Button text="=" onAction="#handleEqualsButton" GridPane.rowIndex="5" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
 
     </GridPane>

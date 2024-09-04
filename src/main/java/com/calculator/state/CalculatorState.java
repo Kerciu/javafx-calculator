@@ -11,6 +11,8 @@ public class CalculatorState {
     private boolean firstNumberStored;
     private boolean secondNumberStored;
 
+    private boolean awaitingSecondNumber;
+
     public double getFirstNumber() {
         return firstNumber;
     }
@@ -41,6 +43,10 @@ public class CalculatorState {
 
     public boolean isSecondNumberStored() {
         return secondNumberStored;
+    }
+
+    public boolean isAwaitingSecondNumber() {
+        return awaitingSecondNumber;
     }
 
     public void setFirstNumber(double firstNumber) {
@@ -76,6 +82,10 @@ public class CalculatorState {
 
     public void setSecondNumberStored(boolean secondNumberStored) {
         this.secondNumberStored = secondNumberStored;
+    }
+
+    public void setAwaitingSecondNumber(boolean awaitingSecondNumber) {
+        this.awaitingSecondNumber = awaitingSecondNumber;
     }
 
     public void resetState() {

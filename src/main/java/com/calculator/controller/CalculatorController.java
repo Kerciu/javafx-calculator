@@ -1,5 +1,6 @@
 package com.calculator.controller;
 
+import com.calculator.parsers.BinaryOperationParser;
 import com.calculator.state.CalculatorState;
 import com.calculator.parsers.UnaryOperationParser;
 import javafx.event.ActionEvent;
@@ -33,6 +34,8 @@ public class CalculatorController {
         if (calculatorState.isBinaryOperatorPressed()) {
             calculatorState.setSecondNumber(Double.parseDouble(outputLabel.getText()));
         }
+
+        if (calculatorState.isAwaitingSecondNumber()) calculatorState.setAwaitingSecondNumber(false);
     }
 
     @FXML
@@ -49,7 +52,9 @@ public class CalculatorController {
         double result = UnaryOperationParser.performOperation(unaryOperator, number);
         outputLabel.setText(Double.toString(result));
 
+        calculatorState.resetState();
         calculatorState.setUnaryOperatorPressed(true);
+        calculatorState.setFirstNumber(result);
     }
 
     @FXML
@@ -64,6 +69,8 @@ public class CalculatorController {
 
         calculatorState.setBinaryOperator(binaryOperator);
         inputLabel.setText(calculatorState.getFirstNumber() + " " + binaryOperator);
+
+        calculatorState.setAwaitingSecondNumber(true);
     }
 
     @FXML
@@ -102,13 +109,34 @@ public class CalculatorController {
         }
     }
 
+    @FXML
+    public void handleEqualsButton()
+    {
+        if (calculatorState.isBinaryOperatorPressed() && calculatorState.getSecondNumber() != 0)
+        {
+            double result = BinaryOperationParser.performOperation(
+                calculatorState.getBinaryOperator(),
+                calculatorState.getFirstNumber(),
+                calculatorState.getSecondNumber(),
+                outputLabel
+            );
+
+            outputLabel.setText(Double.toString(result));
+            inputLabel.setText(calculatorState.getFirstNumber() + " " + calculatorState.getBinaryOperator() + " " + calculatorState.getSecondNumber() + " = ");
+
+            calculatorState.resetState();
+            calculatorState.setFirstNumber(result);
+        }
+    }
+
     private boolean shouldReplaceOutput()
     {
         boolean textEqualsZero = outputLabel.getText().equalsIgnoreCase("0");
         boolean textEqualsDoubleZero = outputLabel.getText().equalsIgnoreCase("00");
         boolean unaryPressed = calculatorState.isUnaryOperatorPressed();
+        boolean awaitingSecondNumber = calculatorState.isAwaitingSecondNumber();
 
-        return textEqualsZero || textEqualsDoubleZero || unaryPressed;
+        return textEqualsZero || textEqualsDoubleZero || unaryPressed || awaitingSecondNumber;
     }
 
     private String parseDoubleZeroIfClicked(String digits)
