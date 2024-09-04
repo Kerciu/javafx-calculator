@@ -65,9 +65,35 @@ public class Controller {
         firstNumberStored = true;
     }
 
-    @FXML void handleBinaryOperator(ActionEvent evt)
+    @FXML
+    public void handleBinaryOperator(ActionEvent evt)
     {
+        Button button = (Button) evt.getSource();
+        String binaryOperator = button.getText();
 
+        if (!firstNumberStored) {
+            firstNumber = Double.parseDouble(outputLabel.getText());
+            firstNumberStored = true;
+        }
+
+        if (firstNumberStored) updateBinaryOperator(binaryOperator);
+
+        binaryOperatorPressed = true;
+        unaryOperatorPressed = false;
+        equalsOperatorPressed = false;
+        firstNumberStored = true;
+    }
+
+    @FXML
+    public void handleDotButton()
+    {
+        
+    }
+
+    private void updateBinaryOperator(String binaryOperator)
+    {
+        this.binaryOperator = binaryOperator;
+        inputLabel.setText(firstNumber + " " + binaryOperator);
     }
 
     private boolean hasZeroReplaceable(String text)
