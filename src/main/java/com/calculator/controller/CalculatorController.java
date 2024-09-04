@@ -27,6 +27,7 @@ public class CalculatorController {
 
         if (shouldReplaceOutput()) {
             outputLabel.setText(digitSelected);
+            calculatorState.setUnaryOperatorPressed(false);
         } else {
             outputLabel.setText(outputLabel.getText() + digitSelected);
         }
@@ -54,7 +55,9 @@ public class CalculatorController {
 
         calculatorState.resetState();
         calculatorState.setUnaryOperatorPressed(true);
-        calculatorState.setFirstNumber(result);
+
+        if (!calculatorState.isFirstNumberStored()) calculatorState.setFirstNumber(result);
+        else if (shouldStoreUnary()) calculatorState.setSecondNumber(result);
     }
 
     @FXML
@@ -112,8 +115,11 @@ public class CalculatorController {
     @FXML
     public void handleEqualsButton()
     {
-        if (calculatorState.isBinaryOperatorPressed() && calculatorState.getSecondNumber() != 0)
+        if (calculatorState.isBinaryOperatorPressed())
         {
+            if (!calculatorState.isSecondNumberStored()) {
+                calculatorState.setSecondNumber(Double.parseDouble(outputLabel.getText()));
+            }
             double result = BinaryOperationParser.performOperation(
                 calculatorState.getBinaryOperator(),
                 calculatorState.getFirstNumber(),
@@ -142,5 +148,9 @@ public class CalculatorController {
     private String parseDoubleZeroIfClicked(String digits)
     {
         return digits.equalsIgnoreCase("00") && outputLabel.getText().equalsIgnoreCase("0") ? "0" : digits;
+    }
+
+    private boolean shouldStoreUnary() {
+        return calculatorState.isBinaryOperatorPressed() && !calculatorState.isAwaitingSecondNumber();
     }
 }
