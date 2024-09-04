@@ -87,7 +87,27 @@ public class Controller {
     @FXML
     public void handleDotButton()
     {
-        
+        if (!outputLabel.getText().contains(".")) {
+            outputLabel.setText(outputLabel.getText() + ".");
+        }
+    }
+
+    @FXML
+    public void handleClearEntryButton()
+    {
+
+    }
+
+    @FXML
+    public void handleClearButton()
+    {
+
+    }
+
+    @FXML
+    public void handleDeleteButton()
+    {
+
     }
 
     private void updateBinaryOperator(String binaryOperator)

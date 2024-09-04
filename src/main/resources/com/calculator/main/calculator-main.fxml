@@ -21,11 +21,11 @@
     <GridPane AnchorPane.topAnchor="180" AnchorPane.leftAnchor="5"
             AnchorPane.rightAnchor="5" hgap="5" vgap="5">
 
-        <Button text="CE" GridPane.rowIndex="0" GridPane.columnIndex="0"
+        <Button text="CE" onAction="#handleClearEntryButton" GridPane.rowIndex="0" GridPane.columnIndex="0"
                 styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
-        <Button text="C" GridPane.rowIndex="0" GridPane.columnIndex="1"
+        <Button text="C" onAction="#handleClearButton" GridPane.rowIndex="0" GridPane.columnIndex="1"
                 styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
-        <Button text="&#x232B;" GridPane.rowIndex="0" GridPane.columnIndex="2"
+        <Button text="&#x232B;" onAction="#handleDeleteButton" GridPane.rowIndex="0" GridPane.columnIndex="2"
                 styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
         <Button text="\%" onAction="#handleUnaryOperator" GridPane.rowIndex="0" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
@@ -65,7 +65,7 @@
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="0" onAction="#handleNumberSelected" GridPane.rowIndex="5" GridPane.columnIndex="1"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
-        <Button text="." GridPane.rowIndex="5" GridPane.columnIndex="2"
+        <Button text="." onAction="#handleDotButton" GridPane.rowIndex="5" GridPane.columnIndex="2"
                 styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
         <Button text="=" GridPane.rowIndex="5" GridPane.columnIndex="3"
                 styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
