@@ -22,17 +22,26 @@ public class Controller {
     {
         Button button = (Button) evt.getSource();
 
-        boolean doubleZeroSelected = false;
         String digitSelected = button.getText();
-        if (digitSelected.length() == 2) doubleZeroSelected = true;
-
         String outputText = outputLabel.getText();
+
+        // allow only one zero upon clicking double zero
+        if (digitSelected.length() == 2 && outputText.equalsIgnoreCase("0")) {
+            digitSelected = digitSelected.replaceAll("00", "0");
+        }
+
 
         if (hasZeroReplaceable(outputText)) {
             // replace zero at the beginning
+            outputLabel.setText(digitSelected);
+
+            if (shouldStoreSecondNumber()) {
+                secondNumberStored = true;
+            }
         }
         else {
             // append to output text
+            outputLabel.setText(outputText + digitSelected);
         }
     }
 
@@ -41,5 +50,10 @@ public class Controller {
         boolean formula = (firstNumberStored && binaryOperatorPressed && secondNumberStored);
         boolean textIsZero = Double.parseDouble(text) == 0;
         return formula || equalsOperatorPressed || unaryOperatorPressed || textIsZero;
+    }
+
+    private boolean shouldStoreSecondNumber()
+    {
+        return !secondNumberStored && firstNumberStored && binaryOperatorPressed;
     }
 }
