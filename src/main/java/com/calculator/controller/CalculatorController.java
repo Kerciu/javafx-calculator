@@ -1,5 +1,6 @@
 package com.calculator.controller;
 
+import com.calculator.darkMode.ToggleSwitch;
 import com.calculator.parsers.BinaryOperationParser;
 import com.calculator.state.CalculatorState;
 import com.calculator.parsers.UnaryOperationParser;
@@ -7,17 +8,35 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
 import javafx.scene.effect.Glow;
+import javafx.scene.layout.AnchorPane;
 
 public class CalculatorController {
 
     private CalculatorState calculatorState = new CalculatorState();
 
     @FXML
+    public AnchorPane toggleSwitchContainer;
+
+    @FXML
     public Label inputLabel;
 
     @FXML
     public Label outputLabel;
+
+    @FXML
+    public void initialize()
+    {
+        ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30);
+
+        toggleSwitch.addSwitchedOnProperty(
+                () -> System.out.println("Dark Mode On"),
+                () -> System.out.println("Dark Mode Off")
+        );
+
+        toggleSwitchContainer.getChildren().add(toggleSwitch);
+    }
 
     @FXML
     public void handleNumberSelected(ActionEvent evt)

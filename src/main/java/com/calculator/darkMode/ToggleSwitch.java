@@ -3,12 +3,16 @@ package com.calculator.darkMode;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-public class ToggleSwitch {
+import java.lang.reflect.Method;
+
+public class ToggleSwitch extends Pane {
 
     private BooleanProperty switchedOn = new SimpleBooleanProperty(false);
 
@@ -21,12 +25,25 @@ public class ToggleSwitch {
         int triggerRadius = height / 2;
         Circle trigger = createTriggerCircle(triggerRadius);
 
+        getChildren().addAll(rectangle, trigger);
+
         translateTransition.setNode(trigger);
 
         switchedOn.addListener((obs, oldState, newState) -> {
             boolean isOn = newState.booleanValue();
             translateTransition.setToX(isOn ? width - triggerRadius : 0);
             translateTransition.play();
+        });
+    }
+
+    public void addSwitchedOnProperty(Runnable switchedOnMethod, Runnable switchedOffMethod)
+    {
+        switchedOn.addListener((obs, oldState, newState) -> {
+            if (newState) {
+                switchedOnMethod.run();
+            } else {
+                switchedOffMethod.run();
+            }
         });
     }
 
@@ -52,7 +69,7 @@ public class ToggleSwitch {
         return triggerCircle;
     }
 
-    public boolean isSwitchedOn() {
-        return switchedOn.get();
+    public BooleanProperty isSwitchedOn() {
+        return switchedOn;
     }
 }

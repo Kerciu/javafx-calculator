@@ -12,11 +12,13 @@
         <URL value="@../../../styles/styles.css"/>
     </stylesheets>
 
+    <AnchorPane fx:id="toggleSwitchContainer" prefWidth="100" prefHeight="40" AnchorPane.topAnchor="5" AnchorPane.rightAnchor="0"/>
+
     <Label fx:id="inputLabel" styleClass="input-label"
-           AnchorPane.topAnchor="20" AnchorPane.leftAnchor="7"/>
+           AnchorPane.topAnchor="40" AnchorPane.leftAnchor="7"/>
 
     <Label fx:id="outputLabel" text="0" styleClass="output-label"
-           AnchorPane.topAnchor="80" AnchorPane.leftAnchor="7"/>
+           AnchorPane.topAnchor="90" AnchorPane.leftAnchor="7"/>
 
     <GridPane AnchorPane.topAnchor="180" AnchorPane.leftAnchor="5"
             AnchorPane.rightAnchor="5" hgap="5" vgap="5">
