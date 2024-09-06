@@ -1,5 +1,23 @@
 /* src/main/resources/styles/styles.css */
 
+.light-mode-variables {
+    -fx-background-color: #ffffff; /* primary-bg-color */
+    -fx-background-color: #e0eafc; /* secondary-bg-color */
+    -fx-text-fill: #4a90e2; /* primary-text-color */
+    -fx-text-fill: #0a7bff; /* output-text-color */
+    -fx-background-color: #cfd8e6; /* button-pressed-color */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 2, 2); /* shadow-color */
+}
+
+.dark-mode-variables {
+    -fx-background-color: #333333; /* primary-bg-color */
+    -fx-background-color: #444444; /* secondary-bg-color */
+    -fx-text-fill: #dddddd; /* primary-text-color */
+    -fx-text-fill: #bbbbbb; /* output-text-color */
+    -fx-background-color: #555555; /* button-pressed-color */
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2); /* shadow-color */
+}
+
 .root {
     -fx-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);
 }
@@ -53,10 +71,6 @@
     -fx-alignment: center;
 }
 
-.calculation-btn {
-    -fx-text-fill: #4a90e2 !important;
-}
-
 .button:hover {
     -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
     -fx-opacity: 0.9;
@@ -73,4 +87,8 @@
 
 .button-secondary-color {
     -fx-background-color: #e0eafc;
+}
+
+.calculation-btn {
+    -fx-text-fill: #4a90e2 !important;
 }

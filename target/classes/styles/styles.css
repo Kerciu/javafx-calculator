@@ -1,7 +1,16 @@
 /* src/main/resources/styles/styles.css */
 
+:root {
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #e0eafc;
+    --primary-text-color: #4a90e2;
+    --output-text-color: #0a7bff;
+    --button-pressed-color: #cfd8e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 .root {
-    -fx-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);
+    -fx-background-color: linear-gradient(to bottom right, var(--primary-bg-color), var(--secondary-bg-color));
 }
 
 * {
@@ -26,8 +35,8 @@
     -fx-font-size: 2em;
     -fx-background-radius: 0.5em;
     -fx-padding: 0.15em;
-    -fx-background-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
+    -fx-background-color: var(--primary-bg-color);
+    -fx-effect: dropshadow(gaussian, var(--shadow-color), 5, 0, 2, 2);
 }
 
 .output-label {
@@ -36,9 +45,9 @@
     -fx-font-size: 4em;
     -fx-background-radius: 0.5em;
     -fx-padding: 0.15em 0.15em 0 0;
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #0a7bff;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
+    -fx-background-color: var(--primary-bg-color);
+    -fx-text-fill: var(--output-text-color);
+    -fx-effect: dropshadow(gaussian, var(--shadow-color), 5, 0, 2, 2);
 }
 
 .button {
@@ -47,30 +56,29 @@
     -fx-font-size: 1.8em;
     -fx-background-radius: 1em;
     -fx-border: none;
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
-    -fx-text-fill: #4a90e2;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
+    -fx-background-color: linear-gradient(to bottom, var(--primary-bg-color), var(--secondary-bg-color));
+    -fx-text-fill: var(--primary-text-color);
+    -fx-effect: dropshadow(gaussian, var(--shadow-color), 5, 0, 2, 2);
     -fx-alignment: center;
 }
 
-.calculation-btn {
-    -fx-text-fill: #4a90e2 !important;
-}
-
 .button:hover {
-    -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
+    -fx-background-color: linear-gradient(to bottom, var(--secondary-bg-color), var(--primary-bg-color));
     -fx-opacity: 0.9;
 }
 
 .button:pressed {
-    -fx-background-color: #cfd8e6;
-    -fx-opacity: 0.8;
+    -fx-background-color: var(--button-pressed-color);
 }
 
 .button-primary-color {
-    -fx-background-color: #ffffff;
+    -fx-background-color: var(--primary-bg-color);
 }
 
 .button-secondary-color {
-    -fx-background-color: #e0eafc;
+    -fx-background-color: var(--secondary-bg-color);
+}
+
+.calculation-btn {
+    -fx-text-fill: var(--primary-text-color) !important;
 }

@@ -12,7 +12,7 @@
         <URL value="@../../../styles/styles.css"/>
     </stylesheets>
 
-    <AnchorPane fx:id="toggleSwitchContainer" prefWidth="100" prefHeight="40" AnchorPane.topAnchor="5" AnchorPane.rightAnchor="0"/>
+    <AnchorPane fx:id="toggleSwitchContainer" prefWidth="70" prefHeight="35" AnchorPane.topAnchor="5" AnchorPane.rightAnchor="0"/>
 
     <Label fx:id="inputLabel" styleClass="input-label"
            AnchorPane.topAnchor="40" AnchorPane.leftAnchor="7"/>
