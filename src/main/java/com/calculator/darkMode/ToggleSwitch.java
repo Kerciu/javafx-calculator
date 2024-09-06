@@ -49,13 +49,13 @@ public class ToggleSwitch extends Pane {
         });
     }
 
-    public void addSwitchedOnProperty(Runnable switchedOnMethod, Runnable switchedOffMethod)
+    public void addSwitchedOnProperty(Runnable switchedOffMethod, Runnable switchedOnMethod)
     {
         switchedOn.addListener((obs, oldState, newState) -> {
             if (newState) {
-                switchedOnMethod.run();
-            } else {
                 switchedOffMethod.run();
+            } else {
+                switchedOnMethod.run();
             }
         });
     }

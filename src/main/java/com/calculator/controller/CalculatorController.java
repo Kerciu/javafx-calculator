@@ -1,11 +1,13 @@
 package com.calculator.controller;
 
+import com.calculator.darkMode.DarkModeSwitcher;
 import com.calculator.darkMode.ToggleSwitch;
 import com.calculator.parsers.BinaryOperationParser;
 import com.calculator.state.CalculatorState;
 import com.calculator.parsers.UnaryOperationParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
@@ -30,12 +32,12 @@ public class CalculatorController {
     public void initialize()
     {
         Color lightMode = Color.WHITE;
-        Color darkMode = Color.rgb(12, 12, 12);
+        Color darkMode = Color.rgb(33, 33, 33);
         ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30, lightMode, darkMode);
 
         toggleSwitch.addSwitchedOnProperty(
-                () -> System.out.println("Dark Mode On"),
-                () -> System.out.println("Dark Mode Off")
+                this::enableDarkMode,
+                this::enableLightMode
         );
 
         toggleSwitchContainer.getChildren().add(toggleSwitch);
@@ -156,6 +158,14 @@ public class CalculatorController {
             calculatorState.resetState();
             calculatorState.setFirstNumber(result);
         }
+    }
+
+    private void enableDarkMode() {
+        DarkModeSwitcher.enableDarkMode(inputLabel, outputLabel, toggleSwitchContainer);
+    }
+
+    private void enableLightMode() {
+        DarkModeSwitcher.enableLightMode(inputLabel, outputLabel, toggleSwitchContainer);
     }
 
     private boolean shouldReplaceOutput()

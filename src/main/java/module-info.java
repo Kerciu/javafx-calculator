@@ -12,6 +12,7 @@ module com.example.demo {
     requires com.almasb.fxgl.all;
     requires junit;
     requires jdk.xml.dom;
+    requires java.desktop;
 
     opens com.calculator.main to javafx.fxml;
     exports com.calculator.main;
