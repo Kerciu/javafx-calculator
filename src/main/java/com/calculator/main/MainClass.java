@@ -16,7 +16,6 @@ public class MainClass extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 470, 640);
 
         URL cssUrl = getClass().getResource("/styles/styles.css");
-        System.out.println("CSS URL: " + cssUrl);
 
         stage.setTitle("Easy Calc");
         StageIconLoader.loadIcon(this, stage);

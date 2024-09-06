@@ -11,6 +11,7 @@ module com.example.demo {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires junit;
+    requires jdk.xml.dom;
 
     opens com.calculator.main to javafx.fxml;
     exports com.calculator.main;
