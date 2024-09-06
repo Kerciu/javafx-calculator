@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Toggle;
 import javafx.scene.effect.Glow;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 public class CalculatorController {
 
@@ -28,7 +29,9 @@ public class CalculatorController {
     @FXML
     public void initialize()
     {
-        ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30);
+        Color lightMode = Color.WHITE;
+        Color darkMode = Color.rgb(12, 12, 12);
+        ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30, lightMode, darkMode);
 
         toggleSwitch.addSwitchedOnProperty(
                 () -> System.out.println("Dark Mode On"),

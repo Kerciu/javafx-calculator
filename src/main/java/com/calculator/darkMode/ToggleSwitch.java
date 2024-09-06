@@ -1,24 +1,26 @@
 package com.calculator.darkMode;
 
+import javafx.animation.FillTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import java.lang.reflect.Method;
-
 public class ToggleSwitch extends Pane {
 
     private BooleanProperty switchedOn = new SimpleBooleanProperty(false);
 
     private TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.25));
+    private FillTransition fillTransition = new FillTransition(Duration.seconds(0.25));
 
-    public ToggleSwitch(int width, int height)
+    private ParallelTransition animation = new ParallelTransition(translateTransition, fillTransition);
+
+    public ToggleSwitch(int width, int height, Color fromColor, Color toColor)
     {
         Rectangle rectangle = createButtonBackground(width, height);
 
@@ -28,11 +30,18 @@ public class ToggleSwitch extends Pane {
         getChildren().addAll(rectangle, trigger);
 
         translateTransition.setNode(trigger);
+        fillTransition.setShape(rectangle);
 
         switchedOn.addListener((obs, oldState, newState) -> {
-            boolean isOn = newState.booleanValue();
+            Color darkModeColor = Color.rgb(12, 12,12);
+
+            boolean isOn = newState;
+
             translateTransition.setToX(isOn ? width - height : 0);
-            translateTransition.play();
+            fillTransition.setFromValue(isOn ? fromColor : toColor);
+            fillTransition.setToValue(isOn ? toColor : fromColor);
+
+            animation.play();
         });
 
         setOnMouseClicked(event ->{
