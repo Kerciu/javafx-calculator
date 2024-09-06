@@ -31,8 +31,12 @@ public class ToggleSwitch extends Pane {
 
         switchedOn.addListener((obs, oldState, newState) -> {
             boolean isOn = newState.booleanValue();
-            translateTransition.setToX(isOn ? width - triggerRadius : 0);
+            translateTransition.setToX(isOn ? width - height : 0);
             translateTransition.play();
+        });
+
+        setOnMouseClicked(event ->{
+            switchedOn.set(!switchedOn.get());
         });
     }
 
@@ -50,8 +54,8 @@ public class ToggleSwitch extends Pane {
     private Rectangle createButtonBackground(int width, int height)
     {
         Rectangle rectangle = new Rectangle(width, height);
-        rectangle.setArcWidth(50);
-        rectangle.setArcHeight(50);
+        rectangle.setArcWidth(height);
+        rectangle.setArcHeight(height);
         rectangle.setFill(Color.WHITE);
         rectangle.setStroke(Color.LIGHTGRAY);
 
