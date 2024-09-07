@@ -20,57 +20,57 @@
     <Label fx:id="outputLabel" text="0" styleClass="output-label"
            AnchorPane.topAnchor="90" AnchorPane.leftAnchor="7"/>
 
-    <GridPane AnchorPane.topAnchor="180" AnchorPane.leftAnchor="5"
+    <GridPane fx:id="buttonGridPane" AnchorPane.topAnchor="180" AnchorPane.leftAnchor="5"
             AnchorPane.rightAnchor="5" hgap="5" vgap="5">
 
         <Button text="CE" onAction="#handleClearEntryButton" GridPane.rowIndex="0" GridPane.columnIndex="0"
-                styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="C" onAction="#handleClearButton" GridPane.rowIndex="0" GridPane.columnIndex="1"
-                styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x232B;" onAction="#handleDeleteButton" GridPane.rowIndex="0" GridPane.columnIndex="2"
-                styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="\%" onAction="#handleUnaryOperator" GridPane.rowIndex="0" GridPane.columnIndex="3"
-                styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x215F;x" onAction="#handleUnaryOperator" GridPane.rowIndex="1" GridPane.columnIndex="0"
-                styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="x²" onAction="#handleUnaryOperator" GridPane.rowIndex="1" GridPane.columnIndex="1"
-                styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x221A;x" onAction="#handleUnaryOperator" GridPane.rowIndex="1" GridPane.columnIndex="2"
-                styleClass="button-primary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x00F7;" onAction="#handleBinaryOperator" GridPane.rowIndex="1" GridPane.columnIndex="3"
-                styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="7" onAction="#handleNumberSelected" GridPane.rowIndex="2" GridPane.columnIndex="0"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="8" onAction="#handleNumberSelected" GridPane.rowIndex="2" GridPane.columnIndex="1"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="9" onAction="#handleNumberSelected" GridPane.rowIndex="2" GridPane.columnIndex="2"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="&#x00D7;" onAction="#handleBinaryOperator" GridPane.rowIndex="2" GridPane.columnIndex="3"
-                styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="4" onAction="#handleNumberSelected" GridPane.rowIndex="3" GridPane.columnIndex="0"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="5" onAction="#handleNumberSelected" GridPane.rowIndex="3" GridPane.columnIndex="1"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="6" onAction="#handleNumberSelected" GridPane.rowIndex="3" GridPane.columnIndex="2"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="-" onAction="#handleBinaryOperator" GridPane.rowIndex="3" GridPane.columnIndex="3"
-                styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="1" onAction="#handleNumberSelected" GridPane.rowIndex="4" GridPane.columnIndex="0"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="2" onAction="#handleNumberSelected" GridPane.rowIndex="4" GridPane.columnIndex="1"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="3" onAction="#handleNumberSelected" GridPane.rowIndex="4" GridPane.columnIndex="2"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="+" onAction="#handleBinaryOperator" GridPane.rowIndex="4" GridPane.columnIndex="3"
-                styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
         <Button text="00" onAction="#handleNumberSelected" GridPane.rowIndex="5" GridPane.columnIndex="0"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="0" onAction="#handleNumberSelected" GridPane.rowIndex="5" GridPane.columnIndex="1"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="." onAction="#handleDotButton" GridPane.rowIndex="5" GridPane.columnIndex="2"
-                styleClass="button-primary-color" GridPane.hgrow="ALWAYS"/>
+                styleClass="button-light" GridPane.hgrow="ALWAYS"/>
         <Button text="=" onAction="#handleEqualsButton" GridPane.rowIndex="5" GridPane.columnIndex="3"
-                styleClass="button-secondary-color calculation-btn" GridPane.hgrow="ALWAYS"/>
+                styleClass="calculation-btn-light" GridPane.hgrow="ALWAYS"/>
 
     </GridPane>
 

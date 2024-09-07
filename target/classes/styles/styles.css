@@ -33,6 +33,7 @@
 
 .input-label-dark {
     -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2);
 }
 
@@ -73,7 +74,7 @@
 
 .button-dark {
     -fx-background-color: linear-gradient(to bottom right, #444444, #333333);
-    -fx-text-fill: #dddddd;
+    -fx-text-fill: linear-gradient(#e24adf, #f4972a) !important;
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2);
 }
 
@@ -97,22 +98,35 @@
     -fx-opacity: 0.8;
 }
 
-.button-light-primary-color {
-    -fx-background-color: #ffffff;
-}
 
-.button-dark-primary-color {
-    -fx-background-color: #333333;
-}
-
-.button-light-secondary-color {
-    -fx-background-color: #e0eafc;
-}
-
-.button-dark-secondary-color {
-    -fx-background-color: #444444;
-}
-
-.calculation-btn {
+.calculation-btn-light {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
     -fx-text-fill: #4a90e2 !important;
+}
+
+.calculation-btn-dark {
+    -fx-background-color: linear-gradient(to bottom right, #444444, #333333);
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.1), 5, 0, 2, 2);
+    -fx-text-fill: linear-gradient(#e24adf, #f4972a) !important;
+}
+
+.calculation-btn-light:hover {
+    -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
+    -fx-opacity: 0.9;
+}
+
+.calculation-btn-dark:hover {
+    -fx-background-color: linear-gradient(to bottom right, #444444, #333333);
+    -fx-opacity: 0.9;
+}
+
+.calculation-btn-light:pressed {
+    -fx-background-color: #cfd8e6;
+    -fx-opacity: 0.8;
+}
+
+.calculation-btn-dark:pressed {
+    -fx-background-color: #555555;
+    -fx-opacity: 0.8;
 }
