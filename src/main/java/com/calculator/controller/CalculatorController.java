@@ -11,10 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
 
 public class CalculatorController {
 
@@ -38,10 +34,7 @@ public class CalculatorController {
         inputLabel.getStyleClass().add("input-label-light");
         outputLabel.getStyleClass().add("output-label-light");
 
-        Color lightMode = Color.WHITE;
-        Color darkModeGradient = Color.
-        Color darkMode = Color.rgb(0x2c, 0x2c, 0x2c);
-        ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30, lightMode, darkMode);
+        ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30);
 
         toggleSwitch.addSwitchedOnProperty(
                 this::enableDarkMode,
@@ -193,16 +186,5 @@ public class CalculatorController {
 
     private boolean shouldStoreUnary() {
         return calculatorState.isBinaryOperatorPressed() && !calculatorState.isAwaitingSecondNumber();
-    }
-
-    private LinearGradient createPinkOrangeGradient()
-    {
-        return new LinearGradient(
-                0, 0, 1, 1,
-                true,
-                CycleMethod.NO_CYCLE,
-                new Stop(0, Color.rgb(0xe2, 0x4a, 0xdf)),
-                new Stop(1, Color.rgb(0xf4, 0x97, 0x2a))
-        );
     }
 }

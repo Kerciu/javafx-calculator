@@ -6,7 +6,7 @@ import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
+import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -18,9 +18,7 @@ public class ToggleSwitch extends Pane {
     private TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.25));
     private FillTransition fillTransition = new FillTransition(Duration.seconds(0.25));
 
-    private ParallelTransition animation = new ParallelTransition(translateTransition, fillTransition);
-
-    public ToggleSwitch(int width, int height, Color fromColor, Color toColor)
+    public ToggleSwitch(int width, int height)
     {
         Rectangle rectangle = createButtonBackground(width, height);
 
@@ -30,18 +28,26 @@ public class ToggleSwitch extends Pane {
         getChildren().addAll(rectangle, trigger);
 
         translateTransition.setNode(trigger);
-        fillTransition.setShape(rectangle);
 
         switchedOn.addListener((obs, oldState, newState) -> {
-            Color darkModeColor = Color.rgb(12, 12,12);
-
             boolean isOn = newState;
 
             translateTransition.setToX(isOn ? width - height : 0);
-            fillTransition.setFromValue(isOn ? fromColor : toColor);
-            fillTransition.setToValue(isOn ? toColor : fromColor);
 
-            animation.play();
+            fillTransition.setShape(rectangle);
+            fillTransition.setFromValue(isOn ? Color.WHITE : Color.rgb(0xe2, 0x4a, 0xdf));
+            fillTransition.setToValue(isOn ? Color.rgb(0xe2, 0x4a, 0xdf) : Color.WHITE);
+
+            fillTransition.setOnFinished(event -> {
+                if (isOn) {
+                    rectangle.setFill(createLinearPinkOrangeGradient());
+                } else {
+                    rectangle.setFill(Color.WHITE);
+                }
+            });
+
+            ParallelTransition parallelTransition = new ParallelTransition(translateTransition, fillTransition);
+            parallelTransition.play();
         });
 
         setOnMouseClicked(event ->{
@@ -80,6 +86,16 @@ public class ToggleSwitch extends Pane {
         triggerCircle.setStroke(Color.LIGHTGRAY);
 
         return triggerCircle;
+    }
+
+    private LinearGradient createLinearPinkOrangeGradient()
+    {
+        return new LinearGradient(
+                0, 0, 1, 1,
+                true, CycleMethod.NO_CYCLE,
+                new Stop(0, Color.rgb(0xe2, 0x4a, 0xdf)),
+                new Stop(1, Color.rgb(0xf4, 0x97, 0x2a))
+        );
     }
 
     public BooleanProperty isSwitchedOn() {
