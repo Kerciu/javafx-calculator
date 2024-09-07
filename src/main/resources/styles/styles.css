@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);
+    -fx-background-color: linear-gradient(to bottom right, #f8f9fc, #dce6fc);
 }
 
 * {
@@ -28,6 +28,7 @@
 
 .input-label-light {
     -fx-background-color: #ffffff;
+    -fx-text-fill: linear-gradient(#5DADE2, #76D7C4);
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
@@ -49,7 +50,7 @@
 
 .output-label-light {
     -fx-background-color: #ffffff;
-    -fx-text-fill: #0a7bff;
+    -fx-text-fill: linear-gradient(#5DADE2, #76D7C4);
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
@@ -70,8 +71,8 @@
 }
 
 .button-light {
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
-    -fx-text-fill: #4a90e2;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #dce6fc);
+    -fx-text-fill: linear-gradient(#5DADE2, #76D7C4);
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
@@ -84,8 +85,7 @@
 }
 
 .button-light:hover {
-    -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
-    -fx-opacity: 0.9;
+    -fx-background-color: linear-gradient(to bottom, #dce6fc, #ffffff);
 }
 
 .button-dark:hover {
@@ -95,8 +95,7 @@
 }
 
 .button-light:pressed {
-    -fx-background-color: #cfd8e6;
-    -fx-opacity: 0.8;
+    -fx-background-color: #c7cfdc;
 }
 
 .button-dark:pressed {
@@ -106,9 +105,9 @@
 
 
 .calculation-btn-light {
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
+    -fx-background-color: linear-gradient(to bottom, #5DADE2, #76D7C4);
+    -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
-    -fx-text-fill: #4a90e2 !important;
 }
 
 .calculation-btn-dark {
@@ -120,17 +119,17 @@
 }
 
 .calculation-btn-light:hover {
-    -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
-    -fx-opacity: 0.9;
+    -fx-background-color: linear-gradient(to bottom, #76D7C4, #5DADE2);
+    -fx-opacity: 0.95;
 }
 
 .calculation-btn-dark:hover {
-    -fx-background-color: #5e6373;
+    -fx-background-color: #393c47;
 }
 
 .calculation-btn-light:pressed {
-    -fx-background-color: #cfd8e6;
-    -fx-opacity: 0.8;
+    -fx-background-color: #6f9eff;
+    -fx-opacity: 0.85;
 }
 
 .calculation-btn-dark:pressed {
