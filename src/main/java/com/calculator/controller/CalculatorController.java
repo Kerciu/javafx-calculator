@@ -7,11 +7,8 @@ import com.calculator.state.CalculatorState;
 import com.calculator.parsers.UnaryOperationParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Toggle;
-import javafx.scene.effect.Glow;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -37,7 +34,6 @@ public class CalculatorController {
     {
         inputLabel.getStyleClass().add("input-label-light");
         outputLabel.getStyleClass().add("output-label-light");
-        addButtonStyles();
 
         Color lightMode = Color.WHITE;
         Color darkMode = Color.rgb(33, 33, 33);
@@ -169,11 +165,11 @@ public class CalculatorController {
     }
 
     private void enableDarkMode() {
-        DarkModeSwitcher.enableDarkMode(inputLabel, outputLabel, toggleSwitchContainer);
+        DarkModeSwitcher.enableDarkMode(inputLabel, outputLabel, toggleSwitchContainer, buttonGridPane);
     }
 
     private void enableLightMode() {
-        DarkModeSwitcher.enableLightMode(inputLabel, outputLabel, toggleSwitchContainer);
+        DarkModeSwitcher.enableLightMode(inputLabel, outputLabel, toggleSwitchContainer, buttonGridPane);
     }
 
     private boolean shouldReplaceOutput()
@@ -193,21 +189,5 @@ public class CalculatorController {
 
     private boolean shouldStoreUnary() {
         return calculatorState.isBinaryOperatorPressed() && !calculatorState.isAwaitingSecondNumber();
-    }
-
-    private void addButtonStyles() {
-        buttonGridPane.lookupAll(".button-light").forEach(node -> {
-            if (node instanceof Button) {
-                Button button = (Button) node;
-                System.out.println("Button text: " + button.getText() + " | Style class: " + button.getStyleClass());
-            }
-        });
-
-        buttonGridPane.lookupAll(".calculation-btn-light").forEach(node -> {
-            if (node instanceof Button) {
-                Button button = (Button) node;
-                System.out.println("Button text: " + button.getText() + " | Style class: " + button.getStyleClass());
-            }
-        });
     }
 }
