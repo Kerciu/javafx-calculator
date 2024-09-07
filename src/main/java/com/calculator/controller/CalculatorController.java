@@ -31,6 +31,9 @@ public class CalculatorController {
     @FXML
     public void initialize()
     {
+        inputLabel.getStyleClass().add("input-label-light");
+        outputLabel.getStyleClass().add("output-label-light");
+
         Color lightMode = Color.WHITE;
         Color darkMode = Color.rgb(33, 33, 33);
         ToggleSwitch toggleSwitch = new ToggleSwitch(60, 30, lightMode, darkMode);

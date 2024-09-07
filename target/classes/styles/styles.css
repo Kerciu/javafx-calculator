@@ -1,28 +1,3 @@
-/* src/main/resources/styles/styles.css */
-
-/* Light mode variables */
-.light-mode-variables {
-    -root-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);
-    -primary-bg-color: #ffffff; /* primary-bg-color */
-    -secondary-bg-color: #e0eafc; /* secondary-bg-color */
-    -primary-text-color: #4a90e2; /* primary-text-color */
-    -output-text-color: #0a7bff; /* output-text-color */
-    -button-pressed-color: #cfd8e6; /* button-pressed-color */
-    -button-hover-color: linear-gradient(to bottom, #e0eafc, #ffffff); /* button-hover-color */
-    -shadow-color: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 2, 2); /* shadow-color */
-}
-
-/* Dark mode variables */
-.dark-mode-variables {
-    -root-background-color: linear-gradient(to bottom right, #333333, #444444);
-    -primary-bg-color: #333333; /* primary-bg-color */
-    -secondary-bg-color: #444444; /* secondary-bg-color */
-    -primary-text-color: #dddddd; /* primary-text-color */
-    -output-text-color: #bbbbbb; /* output-text-color */
-    -button-pressed-color: #555555; /* button-pressed-color */
-    -shadow-color: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2); /* shadow-color */
-}
-
 .root {
     -fx-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);
 }
@@ -87,18 +62,19 @@
     -fx-font-size: 1.8em;
     -fx-background-radius: 1em;
     -fx-border: none;
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
-    -fx-text-fill: #4a90e2;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
     -fx-alignment: center;
 }
 
 .button-light {
-
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e0eafc);
+    -fx-text-fill: #4a90e2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 2, 2);
 }
 
 .button-dark {
-
+    -fx-background-color: linear-gradient(to bottom right, #444444, #333333);
+    -fx-text-fill: #dddddd;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2);
 }
 
 .button-light:hover {
@@ -107,21 +83,34 @@
 }
 
 .button-dark:hover {
-    -fx-background-color: linear-gradient(to bottom, #e0eafc, #ffffff);
+    -fx-background-color: linear-gradient(to bottom right, #444444, #333333);
     -fx-opacity: 0.9;
 }
 
-.button:pressed {
+.button-light:pressed {
     -fx-background-color: #cfd8e6;
     -fx-opacity: 0.8;
 }
 
-.button-primary-color {
+.button-dark:pressed {
+    -fx-background-color: #555555;
+    -fx-opacity: 0.8;
+}
+
+.button-light-primary-color {
     -fx-background-color: #ffffff;
 }
 
-.button-secondary-color {
+.button-dark-primary-color {
+    -fx-background-color: #333333;
+}
+
+.button-light-secondary-color {
     -fx-background-color: #e0eafc;
+}
+
+.button-dark-secondary-color {
+    -fx-background-color: #444444;
 }
 
 .calculation-btn {

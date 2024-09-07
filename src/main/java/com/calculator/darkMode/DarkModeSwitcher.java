@@ -14,8 +14,11 @@ public class DarkModeSwitcher {
         if (scene != null) {
             scene.getRoot().setStyle("-fx-background-color: linear-gradient(to bottom right, #333333, #444444);");
 
-            inputLabel.setStyle("-fx-background-color: #333333; -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2);");
-            outputLabel.setStyle("-fx-background-color: #333333; -fx-text-fill: #bbbbbb; -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0, 2, 2);");
+            inputLabel.getStyleClass().remove("input-label-light");
+            inputLabel.getStyleClass().add("input-label-dark");
+
+            outputLabel.getStyleClass().remove("output-label-light");
+            outputLabel.getStyleClass().add("output-label-dark");
 
             for (Node node : toggleSwitchContainer.getChildren()) {
                 if (node instanceof Button) {
@@ -30,8 +33,11 @@ public class DarkModeSwitcher {
         if (scene != null) {
             scene.getRoot().setStyle("-fx-background-color: linear-gradient(to bottom right, #f8f9fc, #e0eafc);");
 
-            inputLabel.setStyle("-fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 2, 2);");
-            outputLabel.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #0a7bff; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 2, 2);");
+            inputLabel.getStyleClass().remove("input-label-dark");
+            inputLabel.getStyleClass().add("input-label-light");
+
+            outputLabel.getStyleClass().remove("output-label-dark");
+            outputLabel.getStyleClass().add("output-label-light");
 
             for (Node node : toggleSwitchContainer.getChildren()) {
                 if (node instanceof Button) {
