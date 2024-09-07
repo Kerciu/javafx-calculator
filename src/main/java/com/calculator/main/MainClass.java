@@ -20,6 +20,7 @@ public class MainClass extends Application {
         stage.setTitle("Easy Calc");
         StageIconLoader.loadIcon(this, stage);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
