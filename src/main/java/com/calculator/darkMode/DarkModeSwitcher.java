@@ -12,7 +12,7 @@ public class DarkModeSwitcher {
     {
         Scene scene = toggleSwitchContainer.getScene();
         if (scene != null) {
-            scene.getRoot().setStyle("-fx-background-color: linear-gradient(to bottom right, #333333, #444444);");
+            scene.getRoot().setStyle("-fx-background-color: linear-gradient(to bottom right, #2e2e2e, #3c3c3c);");
 
             inputLabel.getStyleClass().remove("input-label-light");
             inputLabel.getStyleClass().add("input-label-dark");
