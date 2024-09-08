@@ -48,8 +48,6 @@ A simple calculator application built using JavaFX for the user interface. This 
 ## 🖼️ Screenshots
 <p align="center">
   <img src="assets/images/calculator-light.png" alt="Calculator Light UI" width="300" />
-</p>
-<p align="center">
   <img src="assets/images/calculator-dark.png" alt="Calculator Dark UI" width="300" />
 </p>
 
